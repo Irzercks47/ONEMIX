@@ -2,6 +2,6 @@ img {
     display: block;
 }
 
-.navbar .active {
-    display: flex !important;
+.nav-link {
+    margin-left: 20px;
 }

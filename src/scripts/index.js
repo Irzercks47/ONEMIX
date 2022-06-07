@@ -3,6 +3,5 @@ import '../styles/main.css';
 import './component/app-bar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
-// import './component/jumbotron-bar';
+import './component/jumbotron-bar';
 
-// import '../styles/jumbotron.css';

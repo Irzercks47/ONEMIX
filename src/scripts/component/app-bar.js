@@ -14,10 +14,10 @@ class appBar extends HTMLElement {
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
               <div class="navbar-nav">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Pricing</a>
-                <a class="nav-link disabled">Disabled</a>
+                <a class="nav-link" href="#">Product</a>
+                <a class="nav-link" href="#">
+                  <ion-icon name="cart-outline"></ion-icon>
+                </a>
               </div>
             </div>
           </div>
