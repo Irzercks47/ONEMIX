@@ -1,3 +1,7 @@
 img {
     display: block;
 }
+
+.navbar .active {
+    display: flex !important;
+}
