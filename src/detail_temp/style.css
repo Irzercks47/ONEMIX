@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* detail item */
+.detail-card {
+    margin-left: 2%;
+}
+
+.image > img {
+    max-width: 35em;
+    max-height: 40em;
+}
+
+.detail-item .item-info {
+    margin-top: 25px;
+}
+
