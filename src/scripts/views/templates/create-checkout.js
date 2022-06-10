@@ -170,7 +170,7 @@ const createCheckoutTemplate = (detaillist) => `
 				</div>
 				<div class="form-name">
 					<label for="username">Alamat</label>
-					<input type="password" placeholder="Alamat Pengiriman" id="alamat"/>
+					<input type="text" placeholder="Alamat Pengiriman" id="alamat"/>
 					<i class="fas fa-check-circle"></i>
 					<i class="fas fa-exclamation-circle"></i>
 					<small>Error message</small>
