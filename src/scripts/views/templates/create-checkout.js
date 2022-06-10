@@ -175,68 +175,85 @@ const createCheckoutTemplate = (detaillist) => `
 /*INI MERUPAKAN FORM VALIDATION JAVASCRIPT PADA CHECKOUT, YANG MERUPAKAN DATA PENGIRIMAN ...  */
 /*Masih Belum fix karena gak tau harus di taruh dimana ... */
 /*Jadi sementara aku taruh sini dulu */
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const nohp = document.getElementById('nohp');
-const alamat = document.getElementById('alamat');
+	//Validtion Code For Inputs
 
-form.addEventListener('submit', e => {
-	e.preventDefault();
-	
-	checkInputs();
-});
+	var email = document.forms['form']['email'];
+	var fullname = document.forms['form']['fullname'];
+	var nohp = document.forms['form']['nohp'];
+	var alamat = document.forms['form']['alamat'];
 
-function checkInputs() {
-	// trim to remove the whitespaces
-	const usernameValue = username.value.trim();
-	const emailValue = email.value.trim();
-	const nohpValue = nohp.value.trim();
-	const alamatValue = alamat.value.trim();
 	
-	if(usernameValue === '') {
-		setErrorFor(username, 'Username cannot be blank');
-	} else {
-		setSuccessFor(username);
+	var email_error = document.getElementById('email_error');
+	var fullname_error = document.getElementById('fullname_error');
+	var nohp_error = document.getElementById('nohp_error');
+	var alamat_error = document.getElementById('alamat_error');
+
+	
+	email.addEventListener('textInput', email_Verify);
+	fullname.addEventListener('textInput', fullname_Verify);
+	nohp.addEventListener('textInput', nohp_Verify);
+	alamat.addEventListener('textInput', nohp_Verify);
+
+	
+	function validated(){
+		if (email.value.length < 9) {
+			email.style.border = "1px solid red";
+			email_error.style.display = "block";
+			email.focus();
+			return false;
+		}
+		if (fullname.value.length < 3) {
+			fullname.style.border = "1px solid red";
+			fullname_error.style.display = "block";
+			fullname.focus();
+			return false;
+		}
+
+		if (nohp.value.length < 6) {
+			nohp.style.border = "1px solid red";
+			nohp_error.style.display = "block";
+			nohp.focus();
+			return false;
+		}
+
+		if (alamat.value.length < 6) {
+			alamat.style.border = "1px solid red";
+			alamat_error.style.display = "block";
+			alamat.focus();
+			return false;
+		}
+	
+	}
+	function email_Verify(){
+		if (email.value.length >= 8) {
+			email.style.border = "1px solid silver";
+			email_error.style.display = "none";
+			return true;
+		}
+	}
+	function fullname_Verify(){
+		if (fullname.value.length >= 3) {
+			fullname.style.border = "1px solid silver";
+			fullname_error.style.display = "none";
+			return true;
+		}
+	}
+	function nohp_Verify(){
+		if (nohp.value.length >= 5) {
+			nohp.style.border = "1px solid silver";
+			nohp_error.style.display = "none";
+			return true;
+		}
+	}
+
+	function alamat_Verify(){
+		if (alamat.value.length >= 5) {
+			alamat.style.border = "1px solid silver";
+			alamat_error.style.display = "none";
+			return true;
+		}
 	}
 	
-	if(emailValue === '') {
-		setErrorFor(email, 'Email cannot be blank');
-	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'Not a valid email');
-	} else {
-		setSuccessFor(email);
-	}
-	
-	if(nohpValue === '') {
-		setErrorFor(nohp, 'Nomor Handphone cannot be blank');
-	} else {
-		setSuccessFor(nohp);
-	}
-	
-	if(alamatValue === '') {
-		setErrorFor(alamat, 'Alamat cannot be blank');
-	} else {
-		setSuccessFor(alamat);
-	}
-	
-}
-
-function setErrorFor(input, message) {
-	const formControl = input.parentElement;
-	const small = formControl.querySelector('small');
-	formControl.className = 'form-name error';
-	small.innerText = message;
-}
-
-function setSuccessFor(input) {
-	const formControl = input.parentElement;
-	formControl.className = 'form-name success';
-}
-	
-function isEmail(email) {
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-}
 
 
 
