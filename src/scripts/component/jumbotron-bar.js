@@ -5,7 +5,7 @@ class jumbotronBar extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <section class="jumbotron" >
+        <section class="jumbotron" id = "jumbotron" >   
             <div class="body">
                 <h1 class="title">ONEMIX</h1>
                 <p class="text">Number 1 website for local footwear .</p>
