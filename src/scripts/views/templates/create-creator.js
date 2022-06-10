@@ -109,4 +109,70 @@ const createAfterCheckoutTemplate = (detaillist) => `
 						</div>
 `;
 
+window.addEventListener('load', () => {
+  fetch('/api/list')
+    .then((res) => res.json())
+    .then((result) => {
+      console.log(result);
+
+      const listContainer = document.getElementById('');
+      listContainer.innerHTML = result.map('nama template').join('');
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+document.getElementById('idbuttonadd').addEventListener('click', () => {
+  const name = document.getElementById('nama').value;
+  const email = document.getElementById('nama').value;
+  const noWA = document.getElementById('nama').value;
+  const alamatDetail = document.getElementById('nama').value;
+
+  if (!name || !email || !noWA || !alamatDetail) return console.log('Isi data Anda dengan Lengkap');
+
+  fetch(`/api/add?name=${name}&email=${email}&noWA=${noWA}&alamatDetail=${alamatDetail}`)
+    .then((res) => res.json())
+    .then((result) => {
+      console.log('succes', result);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+document.getElementById('idbuttonedit').addEventListener('click', () => {
+  const name = document.getElementById('nama').value;
+  const email = document.getElementById('nama').value;
+  const noWA = document.getElementById('nama').value;
+  const alamatDetail = document.getElementById('nama').value;
+  const id = document.getElementById('id').value;
+
+  if (!name || !email || !noWA || !alamatDetail || !id) return console.log('Isi data Anda dengan Lengkap');
+
+  fetch(`/api/edit?name=${name}&email=${email}&noWA=${noWA}&alamatDetail=${alamatDetail}&id=${id}`)
+    .then((res) => res.json())
+    .then((result) => {
+      console.log('edit berhasil', result);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  document.getElementById('idbuttondelete').addEventListener('click', () => {
+    const id = document.getElementById('id').value;
+
+    if (!id) return console.log('Isi data Anda dengan Lengkap');
+
+    fetch(`/api/delete?id=${id}`)
+      .then((res) => res.json())
+      .then((result) => {
+        console.log('edit berhasil', result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+});
+
 export default createAfterCheckoutTemplate;
