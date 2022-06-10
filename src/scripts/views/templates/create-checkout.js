@@ -179,3 +179,80 @@ const createCheckoutTemplate = (detaillist) => `
 			</form>
 		</div>
         `;
+
+/*INI MERUPAKAN FORM VALIDATION JAVASCRIPT PADA CHECKOUT, YANG MERUPAKAN DATA PENGIRIMAN ...  */
+/*Masih Belum fix karena gak tau harus di taruh dimana ... */
+/*Jadi sementara aku taruh sini dulu */
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const nohp = document.getElementById('nohp');
+const alamat = document.getElementById('alamat');
+
+form.addEventListener('submit', e => {
+	e.preventDefault();
+	
+	checkInputs();
+});
+
+function checkInputs() {
+	// trim to remove the whitespaces
+	const usernameValue = username.value.trim();
+	const emailValue = email.value.trim();
+	const nohpValue = nohp.value.trim();
+	const alamatValue = alamat.value.trim();
+	
+	if(usernameValue === '') {
+		setErrorFor(username, 'Username cannot be blank');
+	} else {
+		setSuccessFor(username);
+	}
+	
+	if(emailValue === '') {
+		setErrorFor(email, 'Email cannot be blank');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+	} else {
+		setSuccessFor(email);
+	}
+	
+	if(nohpValue === '') {
+		setErrorFor(nohp, 'Nomor Handphone cannot be blank');
+	} else {
+		setSuccessFor(nohp);
+	}
+	
+	if(alamatValue === '') {
+		setErrorFor(alamat, 'Alamat cannot be blank');
+	} else {
+		setSuccessFor(alamat);
+	}
+	
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-name error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-name success';
+}
+	
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+
+
+
+
+
+
+
+
+
+
