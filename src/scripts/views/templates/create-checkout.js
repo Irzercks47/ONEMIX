@@ -1,175 +1,179 @@
 const createCheckoutTemplate = (detaillist) => `
-    <head>
-        <!-- Bootstrap CSS Untuk TABEL KERANJANG-->
-        <link rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!-- Bootstrap 5 CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+    crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
 
-        <!-- fontawesome cdn For Icons Untuk Tanda (+) (-) dan Icon Lainnya-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
-
+<link rel="stylesheet" href="css/style.css">
+<title>Checkout</title>
+<link href="#favicon" rel="icon">
+<link href="#" rel="icon">
 </head>
 
-<main>
-<!-- ==============cart starts here============== -->
-<section class="cart py-5 my-5" id="cart">
-    <div class="container ">
-        <div class="section_title text-center mb-5">
-            <h1 class="text-capitalize">Cart</h1>
-        </div>
-        <div class="row bg_cart_1 rounded">
-            <!--Grid column-->
-            <div class="col-md-8 border-right">
-                <!-- Card -->
-                <div class="mb-3">
-                    <div class="pt-4">
-                        <h5 class="mb-4">Cart (<span>3</span> items)</h5>
-                        <div class="row mb-4">
-                            <div class="col-md-5 col-lg-3 col-xl-3">
-                                <div class="rounded mb-3 mb-md-0">
-                                    <img class="img-fluid w-100 rounded" src="assets/images/dress3.png" alt="Sample">
-                                </div>
+<body class="bg-light">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-11 mx-auto">
+            <div class="row mt-5 gx-3">
+                <!-- left side div -->
+                <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
+                    <div class="card p-4">
+                        <h2 class="py-4 font-weight-bold">Cart (2 items)</h2>
+                        <div class="row">
+                            <!-- cart images div -->
+                            <div
+                                class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                                <img src="images/img2.jpg" class="img-fluid" alt="cart img">
                             </div>
-                            <div class="col-md-7 col-lg-9 col-xl-9">
-                                <div>
-                                    <div class="d-flex justify-content-between">
-                                        <div>
-                                            <h5>Levi's Black Sepatu</h5>
-                                            <p class="mb-2 text-muted text-uppercase small">Sepatu</p>
-                                            <p class="mb-2 text-muted text-uppercase small">Color: Black</p>												</div>
-                                        <div>
-                                            <div class="mb-0 w-100">
-                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-sm btn-outline-primary">
-                                                    <i class="fas fa-minus"></i>
-                                                </button>
-                                                <input class="quantity text-center" min="0" max="10" name="quantity" value="1" type="number">
-                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-sm btn-outline-primary">
-                                                    <i class="fas fa-plus"></i>
-                                                </button>
-                                            </div>
-                                            <small class="form-text text-muted text-center">
-                                                (Note: 1 Piece)
-                                            </small>
-                                        </div>
+                            <!-- cart product details -->
+                            <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                <div class="row">
+                                    <!-- product name  -->
+                                    <div class="col-6 card-title">
+                                        <h1 class="mb-4 product_name">Sepatu Keren</h1>
+                                        <p class="mb-2">Sepatu - Modis</p>
+                                        <p class="mb-2">Warna: BLUE</p>
                                     </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <a href="javascript:;" type="button" class="small text-uppercase mr-3">
-                                                <i class="fas fa-trash-alt mr-1"></i>
-                                                Remove item 
-                                            </a>
-                                        </div>
-                                        <p class="mb-0">
-                                            <span><strong id="summary">Rp 599</strong></span>
-                                        </p class="mb-0">
+                                    <!-- quantity inc dec -->
+                                    <div class="col-6">
+                                        <ul class="pagination justify-content-end set_quantity">
+                                            <li class="page-item">
+                                                <button class="page-link "
+                                                    onclick="decreaseNumber('textbox','itemval')">
+                                                    <i class="fas fa-minus"></i> </button>
+                                            </li>
+                                            <li class="page-item"><input type="text" name="" class="page-link"
+                                                    value="0" id="textbox">
+                                            </li>
+                                            <li class="page-item">
+                                                <button class="page-link"
+                                                    onclick="increaseNumber('textbox','itemval')"> <i
+                                                        class="fas fa-plus"></i></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- //remover move and price -->
+                                <div class="row">
+                                    <div class="col-8 d-flex justify-content-between remove_wish">
+                                        <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                                        <p><i class="fas fa-heart"></i> MOVE TO WISH LIST </p>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-end price_money">
+                                        <h3>Rp<span id="itemval">0.00 </span></h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="mb-4">
-                            <div class="row mb-4">
-                                <div class="col-md-5 col-lg-3 col-xl-3">
-                                    <div class="rounded mb-3 mb-md-0">
-                                        <img class="img-fluid w-100 rounded" src="assets/images/dress2.png" alt="Sample">
+                    </div>
+                    <hr />
+                    <!-- 2nd cart product -->
+                    <div class="card p-4">
+                        <div class="row">
+                            <!-- cart images div -->
+                            <div
+                                class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                                <img src="images/img3.jpg" class="img-fluid" alt="cart img">
+                            </div>
+                            <!-- cart product details -->
+                            <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                <div class="row">
+                                    <!-- product name  -->
+                                    <div class="col-6 card-title">
+                                        <h1 class="mb-4 product_name"> Sepatu Sneakers</h1>
+                                        <p class="mb-2">Sepatu - Casual</p>
+                                        <p class="mb-2">COLOR: Item</p>
+                                    </div>
+                                    <!-- quantity inc dec -->
+                                    <div class="col-6">
+                                        <ul class="pagination justify-content-end set_quantity">
+                                            <li class="page-item">
+                                                <button class="page-link "
+                                                    onclick="decreaseNumber('textbox1','itemval1')"> <i
+                                                        class="fas fa-minus"></i> </button>
+                                            </li>
+                                            <li class="page-item"><input type="text" name="" class="page-link"
+                                                    value="0" id="textbox1">
+                                            </li>
+                                            <li class="page-item">
+                                                <button class="page-link"
+                                                    onclick="increaseNumber('textbox1','itemval1')"> <i
+                                                        class="fas fa-plus"></i></button>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="col-md-7 col-lg-9 col-xl-9">
-                                    <div>
-                                        <div class="d-flex justify-content-between">
-                                            <div>
-                                                <h5>REAL White Sendal</h5>
-                                                <p class="mb-3 text-muted text-uppercase small">Sendal</p>
-                                                <p class="mb-2 text-muted text-uppercase small">Color: White</p>														<p class="mb-3 text-muted text-uppercase small">Size: L</p>
-                                            </div>
-                                            <div>
-                                                <div class="mb-0 w-100">
-                                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="btn btn-sm btn-outline-primary">
-                                                        <i class="fas fa-minus"></i>
-                                                    </button>
-                                                    <input class="quantity text-center" min="0" max="10" name="quantity" value="1" type="number">
-                                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="btn btn-sm btn-outline-primary">
-                                                        <i class="fas fa-plus"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <a href="javascript:;" type="button" class="card-link-secondary small text-uppercase mr-3">
-                                                    <i class="fas fa-trash-alt mr-1"></i> 
-                                                    Remove item
-                                                </a>
-                                            </div>
-                                            <p class="mb-0">
-                                                <span><strong>Rp 399</strong></span>
-                                            </p class="mb-0">
-                                        </div>
+                                <!-- //remover move and price -->
+                                <div class="row">
+                                    <div class="col-8 d-flex justify-content-between remove_wish">
+                                        <p><i class="fas fa-trash-alt"></i> REMOVE ITEM </p>
+                                        <p><i class="fas fa-heart"></i> MOVE TO WISH LIST </p>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-end price_money">
+                                        <h3>Rp<span id="itemval1">0.00 </span> </h3>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--Grid column-->
-            <div class="col-md-4 rounded">
-                <!-- Card -->
-                <div class="mb-3">
-                    <div class="pt-4">
-                        <h5 class="mb-3">Order summary</h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-2">
-                                <span>Levi's Black Sepatu</span>
-                                <span>x1</span>
-                                <span>Rp 599</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-2">
-                                <span>REAL White Sendal</span>
-                                <span>x2</span>
-                                <span>Rp 798</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-2">
-                                <span>Delivery Charges</span>
-                                <span>Rp 53</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center border-top border-bottom px-0 mb-3">
-                                <div>
-                                    <strong>Total amount</strong>
-                                </div>
-                                <span><strong>Rp 1450</strong></span>
-                            </li>
-                        </ul>
+                <!-- right side div -->
+                <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
+                    <div class="right_side p-3 shadow bg-white">
+                        <h2 class="product_name mb-5">The Total Amount Of</h2>
+                        <div class="price_indiv d-flex justify-content-between">
+                            <p>Product amount</p>
+                            <p>Rp<span id="product_total_amt">0.00</span></p>
+                        </div>
+                        <div class="price_indiv d-flex justify-content-between">
+                            <p>Ongkir</p>
+                            <p>Rp<span id="shipping_charge">50</span></p>
+                        </div>
+                        <hr />
+                        <div class="total-amt d-flex justify-content-between font-weight-bold">
+                            <p>The total amount of (including GST)</p>
+                            <p>Rp<span id="total_cart_amt">0.00</span></p>
+                        </div>
                     </div>
+
                 </div>
-                <!-- Card -->
             </div>
-            <!--Grid column-->
         </div>
     </div>
-</section>
+</div> 
 
-<div class="container">
-    <div class="header">
-    <h2 class="label">Isi Data Pengiriman Belanja</h2></p>
-    <form class="form-name" action="home.html" method="post" name="form" onsubmit="return validated()">
+    <div class="container">
+        <div class="header">
+        <h2 class="label">Isi Data Pengiriman Belanja</h2></p>
+        <form class="form-name" action="home.html" method="post" name="form" onsubmit="return validated()">
 
-        <div class="font">Email</div>
-        <input autocomplete="off" type="text" name="email">
-        <div id="email_error">Please fill up your Email</div>
+            <div class="font">Email</div>
+            <input autocomplete="off" type="text" name="email">
+            <div id="email_error">Please fill up your Email</div>
 
-        <div class="font font2">Nama Lengkap</div>
-        <input type="text" name="fullname">
-        <div id="fullname_error">Please fill Nama Lengkap or more than 3 Characters</div>
+            <div class="font font2">Nama Lengkap</div>
+            <input type="text" name="fullname">
+            <div id="fullname_error">Please fill Nama Lengkap or more than 3 Characters</div>
 
-        <div class="font font2">Nomor Handphone</div>
-        <input type="number" name="nohp">
-        <div id="nohp_error">Please fill up your Nomor Handphone</div>
-        
-        <div class="font font2">Alamat</div>
-        <input type="text" name="alamat">
-        <div id="alamat_error">Please fill up your Alamat</div>
-        <button type="submit">Go To Checkout</button>
-        
-    </form>
-</div>	
+            <div class="font font2">Nomor Handphone</div>
+            <input type="number" name="nohp">
+            <div id="nohp_error">Please fill up your Nomor Handphone</div>
+            
+            <div class="font font2">Alamat</div>
+            <input type="text" name="alamat">
+            <div id="alamat_error">Please fill up your Alamat</div>
+            <button type="submit">Go To Checkout</button>
+            
+        </form>
+    </div>	
         `;
 
 /*INI MERUPAKAN FORM VALIDATION JAVASCRIPT PADA CHECKOUT, YANG MERUPAKAN DATA PENGIRIMAN ...  */
