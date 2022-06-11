@@ -22,3 +22,18 @@ body {
     margin-top: 25px;
 }
 
+.detail-item .item-price {
+    margin-top: 40px;
+}
+
+.item-price .price-container,
+.item-desc .desc-container
+{
+    min-height: 40px;
+    background-color: #D9D9D9;
+    padding: 20px 10px 10px 10px;
+}
+
+.detail-item .item-desc {
+    margin-top: 20px;
+}

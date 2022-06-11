@@ -1,4 +1,5 @@
-body{
+/* Di koment karena mengubah setting halaman lain */
+/* body{
 	margin:0;
 	padding:20px;
 	font-family: sans-serif;
@@ -6,7 +7,7 @@ body{
 
 *{
 	box-sizing: border-box;
-}
+} */
 
 .table{
 	width: 100%;
@@ -14,10 +15,10 @@ body{
 }
 
 .table td,.table th{
-  padding:12px 15px;
-  border:1px solid #ddd;
-  text-align: center;
-  font-size:16px;
+	padding:12px 15px;
+	border:1px solid #ddd;
+	text-align: center;
+	font-size:16px;
 }
 
 .table th{
@@ -62,14 +63,15 @@ body{
 }
 /* Gambar */
 .img-keranjang {
-  width: 120px;
+	width: 120px;
 }
 
 /*button*/
 :root{
     --black:#2c2c54;
     --orange:#ff9f1a;
-  }
+}
+
 .btn{
     display: inline-block;
     margin-top: 1rem;
@@ -81,9 +83,9 @@ body{
     cursor: pointer;
     background:#fff;
     padding:.8rem 1rem;
-  }
-  
-  .btn:hover{
-    background:var(--orange);
-    color:#fff;
-  }
+}
+
+.btn:hover{
+	background:var(--orange);
+	color:#fff;
+}
