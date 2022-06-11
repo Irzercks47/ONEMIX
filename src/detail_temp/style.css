@@ -14,7 +14,8 @@ body {
     border: black solid 1px;
     border-radius: 1%;
     padding: 10px;
-    box-shadow: 2px 3px black
+    box-shadow: 4px 7px black;
+    margin-top: 20px;
 }
 
 .image > img {
@@ -27,7 +28,7 @@ body {
 }
 
 .detail-item .item-price {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .item-price .price-container,
