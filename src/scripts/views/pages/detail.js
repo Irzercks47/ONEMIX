@@ -1,4 +1,4 @@
-const Home = {
+const DetailPage = {
     async render() {
         return `
             <div class="detail-card container"><div>
@@ -10,4 +10,4 @@ const Home = {
     },
 };
 
-export default Home;
+export default DetailPage;
