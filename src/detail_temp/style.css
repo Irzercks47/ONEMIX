@@ -11,11 +11,15 @@ body {
 /* detail item */
 .detail-card {
     margin-left: 2%;
+    border: black solid 1px;
+    border-radius: 1%;
+    padding: 10px;
+    box-shadow: 2px 3px black
 }
 
 .image > img {
-    max-width: 35em;
-    max-height: 40em;
+    min-width: 5em;
+    min-height: 10em;
 }
 
 .detail-item .item-info {
@@ -35,5 +39,9 @@ body {
 }
 
 .detail-item .item-desc {
+    margin-top: 20px;
+}
+
+.item-info > button {
     margin-top: 20px;
 }
