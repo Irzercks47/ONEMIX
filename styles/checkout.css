@@ -2,9 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
 
-* {
-	box-sizing: border-box;
-}
 /*NOTE : TABLE CHECKOUT OTOMATIS TERBUAT MENGGUNAKAN BOOTSRAP https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css */
 /*CHECKOUT*/
 section{

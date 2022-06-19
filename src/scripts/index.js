@@ -1,7 +1,7 @@
 import 'regenerator-runtime';
-import '../styles/main.css';
-import '../styles/aftercheckout.css'
-import '../styles/checkout.css'
+import '../../styles/main.css'
+import '../../styles/aftercheckout.css'
+import '../../styles/checkout.css'
 import './component/app-bar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "source": "src/templates/index.html",
+  "source": "templates/index.html",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
