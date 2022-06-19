@@ -2,8 +2,7 @@
   "name": "onemix",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "source": "src/templates/index.html",
+  "source": "keranjang.html",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
@@ -30,6 +29,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^4.0.2",
     "parcel": "^2.6.0",
+    "parcel-bundler": "^1.12.5",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
