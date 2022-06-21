@@ -1,0 +1,219 @@
+/*Form*/
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+/*NOTE : TABLE CHECKOUT OTOMATIS TERBUAT MENGGUNAKAN BOOTSRAP https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css */
+/*CHECKOUT*/
+section{
+  padding:2rem 9%;
+}
+
+/* CSS Form DATA PENGIRIMAN BELANJA*/
+
+.header {
+	border-bottom: 1px solid #f0f0f0;
+	background-color: #f7f7f7;
+	padding: 20px 40px;
+}
+
+.header h2 {
+	margin: 0;
+}
+
+.form {
+	padding: 30px 40px;	
+}
+
+.form-name {
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.form-name label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.label{
+	text-align: center;
+}
+
+.form-name input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-name input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+
+.form-name.error input {
+	border-color: #e74c3c;
+}
+
+.form-name i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+
+
+.form-name input{
+	height: 40px;
+	width: 100%;
+	padding: 0 5px;
+	font-size: 18px;
+	outline: none;
+	border: 1px solid silver;
+}
+.form-name .font2{
+	margin-top: 30px;
+}
+.form-name button{
+	margin: 45px 0 30px 0;
+	height: 45px;
+	width: 100%;
+	font-size: 20px;
+	color: white;
+	outline: none;
+	cursor: pointer;
+	font-weight: bold;
+	background: #1A237E;
+	border-radius: 3px;
+	border: 1px solid #3949AB;
+	transition: .5s;
+}
+.form-name button:hover{
+	background: #151c6a;
+	position :relative;
+}
+.form-name #email_error,
+.form-name #nohp_error,
+.form-name #alamat_error,
+.form-name #fullname_error{
+	margin-top: 5px;
+	width: 100%;
+	font-size: 18px;
+	color: #C62828;
+	background: rgba(255,0,0,0.1);
+	text-align: center;
+	padding: 5px 8px;
+	border-radius: 3px;
+	border: 1px solid #EF9A9A;
+	display: none;
+}
+
+
+
+
+
+
+/*Checkout Border CSS*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+}
+:root {
+  --text-clr: #4f4f4f;
+}
+p {
+  color: #6c757d;
+}
+a {
+  text-decoration: none;
+  color: var(--text-clr);
+}
+a:hover {
+  text-decoration: none;
+  color: var(--text-clr);
+}
+h2 {
+  color: var(--text-clr);
+  font-size: 1.5rem;
+}
+.main_cart {
+  background: #fff;
+}
+.card {
+  border: none;
+}
+.product_img img {
+  min-width: 200px;
+  max-height: 200px;
+}
+.product_name {
+  color: black;
+  font-size: 1.35rem;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+.card-title p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.remove_wish p {
+  font-size: 0.81rem;
+  margin-bottom: 0;
+}
+.price_money h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.set_quantity {
+  position: relative;
+}
+.set_quantity::after {
+  content: "(Note, 1 piece)";
+  width: auto;
+  height: auto;
+  text-align: center;
+  position: absolute;
+  bottom: -20px;
+  right: 1.5rem;
+  font-size: 0.8rem;
+}
+.page-link {
+  line-height: 16px;
+  width: 45px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #495057;
+}
+.page-item input {
+  line-height: 22px;
+  padding: 3px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.page-link:hover {
+  text-decoration: none;
+  color: #495057;
+  outline: none !important;
+}
+.page-link:focus {
+  box-shadow: none;
+}
+.price_indiv p {
+  font-size: 1.1rem;
+}
+.fa-heart:hover {
+  color: red;
+}
