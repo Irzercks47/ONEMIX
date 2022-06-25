@@ -6,7 +6,7 @@ TO DO LIST:
 4. Deskripsi Produk di Home Page (Adit)
 5. Pembayaran di aftercheckout dan konfirmasi pembayaran wa (Hanif)
 6. Icon Onemix (Daffa) 
-7. Font styling (Irza)
+7. Font styling (Irza) (✓)
 8. Footer (Copyright, Gambar onemix) (Irza)
 9. Menambahkan Fitur Search di Navbar (Adit)
 10. Ngecilin ukuran Jumbotron (Irza)
