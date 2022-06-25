@@ -105,6 +105,17 @@ section {
   display: none;
 }
 
+.submit {
+  background-color: green !important;
+}
+button > a {
+  color: white;
+}
+
+button > a :hover {
+  color: white !important;
+}
+
 /*Checkout Border CSS*/
 
 * {
