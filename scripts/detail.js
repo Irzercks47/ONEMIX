@@ -28,7 +28,7 @@ const renderdetailProductTemplate = (data) => {
 };
 
 window.addEventListener('load', () => {
-  fetch('/api/detail')
+  fetch('/api/detail/')
     .then((res) => res.json())
     .then((result) => {
       console.log(result);

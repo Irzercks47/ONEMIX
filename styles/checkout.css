@@ -4,119 +4,111 @@
 
 /*NOTE : TABLE CHECKOUT OTOMATIS TERBUAT MENGGUNAKAN BOOTSRAP https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css */
 /*CHECKOUT*/
-section{
-  padding:2rem 9%;
+section {
+  padding: 2rem 9%;
 }
 
 /* CSS Form DATA PENGIRIMAN BELANJA*/
 
 .header {
-	border-bottom: 1px solid #f0f0f0;
-	background-color: #f7f7f7;
-	padding: 20px 40px;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #f7f7f7;
+  padding: 20px 40px;
 }
 
 .header h2 {
-	margin: 0;
+  margin: 0;
 }
 
 .form {
-	padding: 30px 40px;	
+  padding: 30px 40px;
 }
 
 .form-name {
-	margin-bottom: 5px;
-	padding-bottom: 5px;
-	position: relative;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  position: relative;
 }
 
 .form-name label {
-	display: inline-block;
-	margin-bottom: 5px;
+  display: inline-block;
+  margin-bottom: 5px;
 }
 
-.label{
-	text-align: center;
+.label {
+  text-align: center;
 }
 
 .form-name input {
-	border: 2px solid #f0f0f0;
-	border-radius: 4px;
-	display: block;
-	font-family: inherit;
-	font-size: 14px;
-	padding: 10px;
-	width: 100%;
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
 }
 
 .form-name input:focus {
-	outline: 0;
-	border-color: #777;
+  outline: 0;
+  border-color: #777;
 }
 
-
 .form-name.error input {
-	border-color: #e74c3c;
+  border-color: #e74c3c;
 }
 
 .form-name i {
-	visibility: hidden;
-	position: absolute;
-	top: 40px;
-	right: 10px;
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
 }
 
-
-
-.form-name input{
-	height: 40px;
-	width: 100%;
-	padding: 0 5px;
-	font-size: 18px;
-	outline: none;
-	border: 1px solid silver;
+.form-name input {
+  height: 40px;
+  width: 100%;
+  padding: 0 5px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid silver;
 }
-.form-name .font2{
-	margin-top: 30px;
+.form-name .font2 {
+  margin-top: 30px;
 }
-.form-name button{
-	margin: 45px 0 30px 0;
-	height: 45px;
-	width: 100%;
-	font-size: 20px;
-	color: white;
-	outline: none;
-	cursor: pointer;
-	font-weight: bold;
-	background: #1A237E;
-	border-radius: 3px;
-	border: 1px solid #3949AB;
-	transition: .5s;
+.form-name button {
+  margin: 45px 0 30px 0;
+  height: 45px;
+  width: 100%;
+  font-size: 20px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #1a237e;
+  border-radius: 3px;
+  border: 1px solid #3949ab;
+  transition: 0.5s;
 }
-.form-name button:hover{
-	background: #151c6a;
-	position :relative;
+.form-name button:hover {
+  background: #151c6a;
+  position: relative;
 }
 .form-name #email_error,
 .form-name #nohp_error,
 .form-name #alamat_error,
-.form-name #fullname_error{
-	margin-top: 5px;
-	width: 100%;
-	font-size: 18px;
-	color: #C62828;
-	background: rgba(255,0,0,0.1);
-	text-align: center;
-	padding: 5px 8px;
-	border-radius: 3px;
-	border: 1px solid #EF9A9A;
-	display: none;
+.form-name #fullname_error {
+  margin-top: 5px;
+  width: 100%;
+  font-size: 18px;
+  color: #c62828;
+  background: rgba(255, 0, 0, 0.1);
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 3px;
+  border: 1px solid #ef9a9a;
+  display: none;
 }
-
-
-
-
-
 
 /*Checkout Border CSS*/
 
@@ -124,7 +116,7 @@ section{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
 :root {
   --text-clr: #4f4f4f;
@@ -176,7 +168,7 @@ h2 {
   position: relative;
 }
 .set_quantity::after {
-  content: "(Note, 1 piece)";
+  content: '(Note, 1 piece)';
   width: auto;
   height: auto;
   text-align: center;
