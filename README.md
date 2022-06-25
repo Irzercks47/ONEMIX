@@ -8,3 +8,4 @@ TO DO LIST:
 5. Pembayaran di aftercheckout
 6. Footer
 7. Font styling
+8. Data List Product
