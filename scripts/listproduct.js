@@ -1,6 +1,6 @@
 const renderListProductTemplate = (data) => {
   return `
-        <a href="/detail.html" id="${data.id}"
+        <a href="/detail.html/${data.id}"
         <div class="card col-3">
           <img src="${data.pictureId}" class="card-img-top" alt="${data.name}">
           <div class="card-body">
