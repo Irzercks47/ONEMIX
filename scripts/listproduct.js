@@ -1,15 +1,14 @@
 const renderListProductTemplate = (data) => {
   return `
-        <a href="/detail.html/${data.id}"
-        <div class="card col-3">
-          <img src="${data.pictureId}" class="card-img-top" alt="${data.name}">
+        
+        <div class="card" style="width: 18rem;">
+          <img src="${data.pictureId}" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">${data.name}</h5>
+            <a class="card-title" href="/detail.html">${data.name}</a>
+            <p class="card-text">Harga : Rp ${data.price}</p>
+            
           </div>
-          <ul class="list-group list-group-flush">
-          <li class="list-group-item">Brand ${data.name}</li>
-          <li class="list-group-item">Price ${data.price}</li>
-          </ul>
+        </div>
         </div>
 
     `;
