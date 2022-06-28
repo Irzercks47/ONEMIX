@@ -88,10 +88,66 @@ const createAfterCheckoutTemplate = (detaillist) => `
 					<div class="col">
 						<div class="box">
 							<table class="table">
-							<h3>Pilih metode pembayaran</h3>
-							<tr></tr>
-							<td><input type="checkbox"> Transfer
-							</td>
+								
+							<h3>Pilih metode pembayaran</h3>							
+							
+							<p></p>
+
+							
+							<button type="button" class="collapsible">Bank BCA</button>
+							<div class="content">
+								<p></p>
+								<p style="text-align:left;">Silakan Lakukan Pembayaran Sesuai Nominal ke Rekening BCA Berikut: 5410425787 A.n ONEMIX</p>
+								<p style="text-align:left;">Nomor WA : +6281317203596</p>
+								<p><h2 style="text-align:left;">Jika Berbeda Bank akan terkena Biaya Admin Sebesar Rp10.000</h2></p>
+								<p></p>
+								<p style="text-align:left;">Melalui ATM.</p>
+								<p style="text-align:left;">1. Masukkan kartu ATM dan PIN BCA kamu.</p>
+								<p style="text-align:left;">2. Pada menu utama, pilih menu ” Transaksi lainnya “.</p>
+								<p style="text-align:left;">3. Pilih menu “Transfer” dan kemudian pilih “BCA Virtual Account“.</p>
+								<p style="text-align:left;">4. Masukkan no. BCA Virtual Account & klik “Lanjutkan“.</p>
+								<p style="text-align:left;">5. Periksa kembali rincian pembayaran kamu, lalu pilih Ya.</p>
+								<p></p>
+								<p style="text-align:left;">Melalui BCA Mobile (m-BCA).</p>
+								<p style="text-align:left;">1. Lakukan Log in pada aplikasi BCA Mobile</p>
+								<p style="text-align:left;">2. Pilih m-BCA.</p>
+								<p style="text-align:left;">3. Masukkan kode akses m-BCA.</p>
+								<p style="text-align:left;">4. Pilih m-Transfer.</p>
+								<p style="text-align:left;">5. Pilih BCA Virtual Account.</p>
+								<p style="text-align:left;">6. Masukkan nomor BCA Virtual Account dan Nominal Pembayaran.</p>
+								<p style="text-align:left;">5. Masukkan PIN m-BCA.</p>
+								<p style="text-align:left;">5. Pembayaran selesai</p>
+
+							</div>
+							
+							<button type="button" class="collapsible">Bank BRI</button>
+							<div class="content">
+								<p></p>
+								<p style="text-align:left;">Silakan Lakukan Pembayaran Sesuai Nominal ke Rekening BCA Berikut: 5410425787 A.n ONEMIX</p>
+								<p style="text-align:left;">Nomor WA : +6281317203596</p>
+								<p></p>
+								<p style="text-align:left;">Melalui ATM.</p>
+								<p style="text-align:left;">1. Masukkan kartu ATM dan PIN BCA kamu.</p>
+								<p style="text-align:left;">2. Pada menu utama, pilih menu ” Transaksi lainnya “.</p>
+								<p style="text-align:left;">3. Pilih menu “Transfer” dan kemudian pilih “BCA Virtual Account“.</p>
+								<p style="text-align:left;">4. Masukkan no. BCA Virtual Account & klik “Lanjutkan“.</p>
+								<p style="text-align:left;">5. Periksa kembali rincian pembayaran kamu, lalu pilih Ya.</p>
+								<p></p>
+								<p style="text-align:left;">Melalui BCA Mobile (m-BCA).</p>
+								<p style="text-align:left;">1. Lakukan Log in pada aplikasi BCA Mobile</p>
+								<p style="text-align:left;">2. Pilih m-BCA.</p>
+								<p style="text-align:left;">3. Masukkan kode akses m-BCA.</p>
+								<p style="text-align:left;">4. Pilih m-Transfer.</p>
+								<p style="text-align:left;">5. Pilih BCA Virtual Account.</p>
+								<p style="text-align:left;">6. Masukkan nomor BCA Virtual Account dan Nominal Pembayaran.</p>
+								<p style="text-align:left;">5. Masukkan PIN m-BCA.</p>
+								<p style="text-align:left;">5. Pembayaran selesai</p>
+							</div>
+							<button type="button" class="collapsible">Open Section 3</button>
+							<div class="content">
+							  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							</div>
+
 							</tr>
 
 						</div>
@@ -121,3 +177,18 @@ window.addEventListener('load', () => {
       console.log(error);
     });
 });
+
+let coll = document.getElementsByClassName("collapsible");
+let i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
