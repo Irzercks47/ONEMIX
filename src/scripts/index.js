@@ -9,10 +9,13 @@ import './component/jumbotron-bar';
 import App from './views/app';
 import './views/pages/aftercheckout-page';
 const app = new App({
-    content: document.querySelector('main'),
+  content: document.querySelector('main'),
 });
 
 window.addEventListener('hashchange', () => {
-    app.renderPage();
+  app.renderPage();
 });
 
+window.addEventListener('load', () => {
+  app.renderPage();
+});

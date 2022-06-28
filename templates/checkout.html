@@ -9,7 +9,7 @@
   <body>
     <app-bar></app-bar>
     <main id="mainContent">
-        <body class="bg-light">
+        <body>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-10 col-11 mx-auto">
@@ -88,16 +88,18 @@
                                                     <ul class="pagination justify-content-end set_quantity">
                                                         <li class="page-item">
                                                             <button class="page-link "
-                                                                onclick="decreaseNumber('textbox1','itemval1')"> <i
-                                                                    class="fas fa-minus"></i> </button>
+                                                                onclick="decreaseNumber('textbox1','itemval1')"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                                                                  </svg> </button>
                                                         </li>
                                                         <li class="page-item"><input type="text" name="" class="page-link"
                                                                 value="0" id="textbox1">
                                                         </li>
                                                         <li class="page-item">
                                                             <button class="page-link"
-                                                                onclick="increaseNumber('textbox1','itemval1')"> <i
-                                                                    class="fas fa-plus"></i></button>
+                                                                onclick="increaseNumber('textbox1','itemval1')"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                                  </svg></button>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -136,34 +138,38 @@
                                 </div>
             
                             </div>
+                            <hr>
+                            <div class=" col-md-12 col-lg-8 col-11 mx-left main_cart mb-lg-0 mb-5 shadow">
+                                <h2 class="label">Isi Data Pengiriman Belanja</h2></p>
+                                <form class="form-name" action="home.html" method="post" name="form" onsubmit="return validated()">
+            
+                                    <div class="font">Email</div>
+                                    <input autocomplete="off" type="text" name="email">
+                                    <div id="email_error">Please fill up your Email</div>
+                        
+                                    <div class="font font2">Nama Lengkap</div>
+                                    <input type="text" name="fullname">
+                                    <div id="fullname_error">Please fill Nama Lengkap or more than 3 Characters</div>
+                        
+                                    <div class="font font2">Nomor Handphone</div>
+                                    <input type="number" name="nohp">
+                                    <div id="nohp_error">Please fill up your Nomor Handphone</div>
+                                    
+                                    <div class="font font2">Alamat</div>
+                                    <input type="text" name="alamat">
+                                    <div id="alamat_error">Please fill up your Alamat</div>
+                                    <button class="submit" type="submit"> <a href="/templates/aftercheckout.html">Go To Checkout</a> </button>
+                                    
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div> 
             
-                <div class="container">
+                <div class="container-fluid">
                     <div class="header">
-                    <h2 class="label">Isi Data Pengiriman Belanja</h2></p>
-                    <form class="form-name" action="home.html" method="post" name="form" onsubmit="return validated()">
-            
-                        <div class="font">Email</div>
-                        <input autocomplete="off" type="text" name="email">
-                        <div id="email_error">Please fill up your Email</div>
-            
-                        <div class="font font2">Nama Lengkap</div>
-                        <input type="text" name="fullname">
-                        <div id="fullname_error">Please fill Nama Lengkap or more than 3 Characters</div>
-            
-                        <div class="font font2">Nomor Handphone</div>
-                        <input type="number" name="nohp">
-                        <div id="nohp_error">Please fill up your Nomor Handphone</div>
-                        
-                        <div class="font font2">Alamat</div>
-                        <input type="text" name="alamat">
-                        <div id="alamat_error">Please fill up your Alamat</div>
-                        <button type="submit"> <a href="/templates/aftercheckout.html">Go To Checkout</a> </button>
-                        
-                    </form>
+                    
                 </div>
     </main>
     <script type="module" src="/scripts/index.js"></script>
