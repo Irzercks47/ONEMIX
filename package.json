@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "source": "/templates/checkout.html",
+  "source": "templates/index.html",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel templates/index.html",
     "build": "parcel build",
     "test": "karma start"
   },
