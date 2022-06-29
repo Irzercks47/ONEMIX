@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "source": "templates/listproduct.html",
+  "source": "templates/index.html",
   "scripts": {
     "start": "parcel templates/*.html --open",
     "build": "parcel build templates/*.html --public-url ./",
