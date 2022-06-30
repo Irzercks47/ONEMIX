@@ -3,7 +3,7 @@
 TO DO LIST: 
 1. Back end
 2. Cart Function (Hanif, Irza, Adit)
-4. Deskripsi Produk di Home Page (Adit)(✓)
+4. Deskripsi Produk di Home Page (Adit)
 5. Pembayaran di aftercheckout dan konfirmasi pembayaran wa (Hanif)(✓)
 6. Icon Onemix (Daffa)  (✓)
 7. Font styling (Irza) (✓)
