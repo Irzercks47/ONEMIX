@@ -21,7 +21,7 @@ class footBar extends HTMLElement {
                             <img class="img-fluid" src="../../public/ONEMIX-white.png">
                         </div>
                     </div>
-                    <p class="copyright">Company Name © 2018</p>
+                    <p class="copyright">ONEMIX © 2022</p>
                 </div>
             </footer>
         `;

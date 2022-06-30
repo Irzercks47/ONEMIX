@@ -8,6 +8,7 @@ import 'bootstrap';
 import './component/jumbotron-bar';
 import App from './views/app';
 import './views/pages/aftercheckout-page';
+import './component/foot-bar'
 const app = new App({
   content: document.querySelector('main'),
 });

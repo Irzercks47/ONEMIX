@@ -9,6 +9,7 @@
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 img {
@@ -62,9 +63,11 @@ img {
 
 /* Footer */
 .footer-dark {
-    padding:50px 0;
-    color:#f0f9ff;
-    background-color:#282d32;
+  position: absolute;
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+  margin-top: 20px;
 }
 
 .footer-dark h3 {
