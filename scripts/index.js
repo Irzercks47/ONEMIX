@@ -17,6 +17,10 @@ window.addEventListener('hashchange', () => {
   app.renderPage();
 });
 
+window.addEventListener('load', () => {
+  app.renderPage();
+});
+
 // const renderListProductTemplate = (data) => {
 //   return `
 //           <div class="card_picture">
