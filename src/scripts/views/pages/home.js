@@ -1,16 +1,17 @@
 const Home = {
-    async render() {
-        return `
+  async render() {
+    return `
             <div class="js_list">
                 <h1 class="content-title">Catalogue</h1>
                 <div class="cataloguelist js_cataloguelist" id="cataloguelist"></div>
             </div>
         `;
-    },
+  },
 
-    async afterRender() {
-        //smthng
-    },
+  async afterRender() {
+    const mainContainer = document.querySelector('#jumbotron');
+    mainContainer.style.display = 'none';
+  },
 };
 
 export default Home;

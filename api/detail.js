@@ -7,18 +7,28 @@ const SUPABASE_URL = 'https://jpugpjliuzzjsnbzsbzv.supabase.co';
 
 const supabase = createClient(SUPABASE_URL, SERVICE_KEY);
 
-const detail = async (req, res) => {
-  try {
-    const { data: Footwear_List, error } = await supabase.from('Footwear_List').select('id_barang');
+// let id = 4;
 
-    if (error) {
-      return res.json(error);
-    }
+// const main = async (id) => {
+//   const { data, error } = await supabase.from('Footwear_List').select('*').eq('id', id);
 
-    res.json(Footwear_List);
-  } catch (error) {
-    return res.json(error);
+//   if (error) {
+//     console.error(error);
+//     return;
+//   }
+
+//   console.log(data);
+// };
+
+const main = async (id) => {
+  const { data, error } = await supabase.from('Footwear_List').select('*').eq('id', id);
+
+  if (error) {
+    console.error(error);
+    return;
   }
+
+  return data;
 };
 
-export default detail;
+export default main;

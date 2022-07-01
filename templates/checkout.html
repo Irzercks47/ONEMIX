@@ -17,7 +17,7 @@
                             <!-- left side div -->
                             <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
                                 <div class="card p-4">
-                                    <h2 class="py-4 font-weight-bold">Cart (2 items)</h2>
+                                    <h2 class="py-4 font-weight-bold">Keranjang</h2>
                                     <div class="row">
                                         <!-- cart images div -->
                                         <div
@@ -56,7 +56,6 @@
                                             <div class="row">
                                                 <div class="col-8 d-flex justify-content-between remove_wish">
                                                     <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
-                                                    <p><i class="fas fa-heart"></i> MOVE TO WISH LIST </p>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-end price_money">
                                                     <h3>Rp<span id="itemval">0.00 </span></h3>
@@ -66,59 +65,7 @@
                                     </div>
                                 </div>
                                 <hr />
-                                <!-- 2nd cart product -->
-                                <div class="card p-4">
-                                    <div class="row">
-                                        <!-- cart images div -->
-                                        <div
-                                            class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                                            <img src="/src/public/favicon.png" class="img-fluid" alt="cart img">
-                                        </div>
-                                        <!-- cart product details -->
-                                        <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                                            <div class="row">
-                                                <!-- product name  -->
-                                                <div class="col-6 card-title">
-                                                    <h1 class="mb-4 product_name"> Sepatu Sneakers</h1>
-                                                    <p class="mb-2">Sepatu - Casual</p>
-                                                    <p class="mb-2">COLOR: Item</p>
-                                                </div>
-                                                <!-- quantity inc dec -->
-                                                <div class="col-6">
-                                                    <ul class="pagination justify-content-end set_quantity">
-                                                        <li class="page-item">
-                                                            <button class="page-link "
-                                                                onclick="decreaseNumber('textbox1','itemval1')"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
-                                                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                                                                  </svg> </button>
-                                                        </li>
-                                                        <li class="page-item"><input type="text" name="" class="page-link"
-                                                                value="0" id="textbox1">
-                                                        </li>
-                                                        <li class="page-item">
-                                                            <button class="page-link"
-                                                                onclick="increaseNumber('textbox1','itemval1')"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                                                  </svg></button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- //remover move and price -->
-                                            <div class="row">
-                                                <div class="col-8 d-flex justify-content-between remove_wish">
-                                                    <p><i class="fas fa-trash-alt"></i> REMOVE ITEM </p>
-                                                    <p><i class="fas fa-heart"></i> MOVE TO WISH LIST </p>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-end price_money">
-                                                    <h3>Rp<span id="itemval1">0.00 </span> </h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- right side div -->
+                            <!-- right side div
                             <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
                                 <div class="right_side p-3 shadow bg-white">
                                     <h2 class="product_name mb-5">The Total Amount Of</h2>
@@ -135,33 +82,11 @@
                                         <p>The total amount of (including GST)</p>
                                         <p>Rp<span id="total_cart_amt">0.00</span></p>
                                     </div>
-                                </div>
+                                </div> -->
             
                             </div>
                             <hr>
-                            <div class=" col-md-12 col-lg-8 col-11 mx-left main_cart mb-lg-0 mb-5 shadow">
-                                <h2 class="label">Isi Data Pengiriman Belanja</h2></p>
-                                <form class="form-name" action="home.html" method="post" name="form" onsubmit="return validated()">
-            
-                                    <div class="font">Email</div>
-                                    <input autocomplete="off" type="text" name="email">
-                                    <div id="email_error">Please fill up your Email</div>
-                        
-                                    <div class="font font2">Nama Lengkap</div>
-                                    <input type="text" name="fullname">
-                                    <div id="fullname_error">Please fill Nama Lengkap or more than 3 Characters</div>
-                        
-                                    <div class="font font2">Nomor Handphone</div>
-                                    <input type="number" name="nohp">
-                                    <div id="nohp_error">Please fill up your Nomor Handphone</div>
-                                    
-                                    <div class="font font2">Alamat</div>
-                                    <input type="text" name="alamat">
-                                    <div id="alamat_error">Please fill up your Alamat</div>
-                                    <button class="submit" type="submit"> <a href="/templates/aftercheckout.html">Go To Checkout</a> </button>
-                                    
-                                </form>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -169,7 +94,30 @@
             
                 <div class="container-fluid">
                     <div class="header">
+                        <div class=" col-md-12 col-lg-8 col-11 mx-left main_cart mb-lg-0 mb-5 shadow">
+                            <h2 class="label">Isi Data Pengiriman Belanja</h2></p>
+                            <form class="form-name" action="home.html" method="post" name="form" onsubmit="return validated()">
+        
+                                <div class="font">Email</div>
+                                <input autocomplete="off" type="text" name="email">
+                                <div id="email_error">Please fill up your Email</div>
                     
+                                <div class="font font2">Nama Lengkap</div>
+                                <input type="text" name="fullname">
+                                <div id="fullname_error">Please fill Nama Lengkap or more than 3 Characters</div>
+                    
+                                <div class="font font2">Nomor Handphone</div>
+                                <input type="number" name="nohp">
+                                <div id="nohp_error">Please fill up your Nomor Handphone</div>
+                                
+                                <div class="font font2">Alamat</div>
+                                <input type="text" name="alamat">
+                                <div id="alamat_error">Please fill up your Alamat</div>
+                                <button class="submit" type="submit"> <a href="/templates/aftercheckout.html">Go To Checkout</a> </button>
+                                
+                            </form>
+                        </div>
+                    </div>
                 </div>
     </main>
     <script type="module" src="/scripts/index.js"></script>
