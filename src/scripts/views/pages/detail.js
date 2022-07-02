@@ -19,11 +19,11 @@ const DetailPage = {
                     <div class="item-info container col">
                         <h2>${data.name}</h2>
                         <hr />
-                        <h3>${data.name}</h3>
+                        <h3>${data.brand}</h3>
                         <div class="item-price">
                         <p>Harga :</p>
                         <div class="price-container">
-                            <p>${data.price}</p>
+                            <p>Rp ${data.price}</p>
                         </div>
                         </div>
                         <div class="item-desc">

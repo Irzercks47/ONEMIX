@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "source": "templates/index.html",
+  "source": "templates/aftercheckout.html",
   "scripts": {
 
     "start": "parcel templates/*.html --open",

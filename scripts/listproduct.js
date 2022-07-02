@@ -1,6 +1,6 @@
 const renderListProductTemplate = (Footwear_List) => {
   return `
-          <div class="card col-5" style="width: 18rem;">
+          <div class="card col-2" style="width: 18rem;">
             <img src="${Footwear_List.pictureId}" class="card-img-top" alt="...">
             <div class="card-body">
               <a class="card-title" href="/#/detail/${Footwear_List.id}" >${Footwear_List.name}</a>

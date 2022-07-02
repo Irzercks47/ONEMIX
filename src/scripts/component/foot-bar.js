@@ -5,8 +5,9 @@ class footBar extends HTMLElement {
 
     render() {
         this.innerHTML = `
+        
             <footer class="footer-dark">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-4 col-md-4 item">
                             <h3>About</h3>
@@ -17,8 +18,8 @@ class footBar extends HTMLElement {
                                 <li><a href="https://github.com/DaffaKresna" rel="noreferrer">Daffa Kresna W</a></li>
                             </ul>
                         </div>
-                        <div class="col-md-4 item text">
-                            <img class="img-fluid" src="../../public/ONEMIX-white.png">
+                        <div class="col-md-3 item text">
+                            <img class="img-fluid" src="https://iili.io/jIrUjS.png">
                         </div>
                     </div>
                     <p class="copyright">ONEMIX © 2022</p>

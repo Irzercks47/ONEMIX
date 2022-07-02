@@ -118,7 +118,7 @@
 }
 
 /*container*/
-.container {
+.container-payment {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -128,23 +128,23 @@
   padding: 2rem;
 }
 
-.container .box {
+.container-payment .box {
   text-align: center;
   flex: 1 1 30rem;
 }
 
-.container .box i {
+.container-payment .box i {
   font-size: 4rem;
   color: var(--orange);
 }
 
-.container .box h3 {
+.container-payment .box h3 {
   font-size: 2rem;
   color: var(--black);
   padding-top: 1rem;
 }
 
-.container .box p {
+.container-payment .box p {
   font-size: 1.5rem;
   color: #666;
   padding: 1rem 0;
