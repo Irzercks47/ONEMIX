@@ -6,7 +6,6 @@ const SERVICE_KEY =
 const SUPABASE_URL = 'https://jpugpjliuzzjsnbzsbzv.supabase.co';
 
 const supabase = createClient(SUPABASE_URL, SERVICE_KEY);
-
 const main = async (id) => {
   const { data, error } = await supabase.from('Footwear_List').select('*').eq('id', id);
 

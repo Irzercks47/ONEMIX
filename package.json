@@ -5,8 +5,14 @@
   "main": "index.js",
   "source": "templates/index.html",
   "scripts": {
+<<<<<<< HEAD
     "start": "parcel templates/*.html --open",
     "build": "parcel build templates/*.html --public-url ./",
+=======
+    "start": "parcel templates/index.html",
+    "build": "parcel build",
+
+>>>>>>> e23ac81c00e950c4e8cf13101b1f863ff0b25a7c
     "test": "karma start"
   },
   "keywords": [],

@@ -1,6 +1,7 @@
 const createAfterCheckoutTemplate = (detaillist) => `
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      	</tr>
      </thead>
@@ -126,6 +127,8 @@ const createAfterCheckoutTemplate = (detaillist) => `
 						</tr>
 						</div>
 >>>>>>> d1f5a7d (merubah pembayaran menjadi 1)
+=======
+>>>>>>> e23ac81c00e950c4e8cf13101b1f863ff0b25a7c
 `;
 
 let coll = document.getElementsByClassName('collapsible');
