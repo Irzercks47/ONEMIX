@@ -57,6 +57,7 @@ const DetailPage = {
                     cartProduct: {
                         id: data.id,
                         name: data.name,
+                        brand: data.brand,
                         pictureId: data.pictureId,
                         price: data.price,
                         inCart: 0,

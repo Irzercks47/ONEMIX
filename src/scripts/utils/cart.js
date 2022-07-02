@@ -1,3 +1,5 @@
+import {renderListKeranjang} from '../../../scripts/keranjang'
+
 const Cart = {
     async init ({cartProduct, addCartButton, cartContainer, deleteProduct, increaseProduct, decreaseProduct}) {
         this._cartProduct = cartProduct;
@@ -39,6 +41,7 @@ const Cart = {
         }
 
         this._setProduct();
+        console.log('totalProduct');
     },
 
     _setProduct() {
@@ -60,6 +63,7 @@ const Cart = {
             }
         } 
         localStorage.setItem('prodInCart', JSON.stringify(productInCart));
+        console.log('setProduct');
     },
 
     _totalCost (action) {
@@ -74,6 +78,7 @@ const Cart = {
         } else {
             localStorage.setItem('totalPrice', this._cartProduct.price);
         }
+        console.log('totalCost');
     },
 
     _manageProduct () {
@@ -92,7 +97,7 @@ const Cart = {
                 this._totalProducts(productInCart[currProduct]);
                 this._totalCost(productInCart[currProduct]);
                 localStorage.setItem('prodInCart', JSON.stringify(productInCart));
-                //method display
+                this._displayCart();
             });
 
             this._decreaseProduct[i].addEventListener('click', () => {
@@ -106,10 +111,11 @@ const Cart = {
                     this._totalProducts(productInCart[currProduct], "decrease");
                     this._totalCost(productInCart[currProduct], "decrease");
                     localStorage.setItem('productInCart', JSON.stringify(productInCart));
-                    //method display
+                    this._displayCart();
                 }
             });
         }
+        console.log('manage');
     },
 
     _deleteProductInCart() {
@@ -129,10 +135,36 @@ const Cart = {
                 delete productInCart[productName];
                 localStorage.setItem('prodInCart', JSON.stringify(productInCart));
 
-                //method display
-                //method onload
+                this._displayCart();
+                this._onLoadCart();
             })
         }
+        console.log('delete');
+    },
+
+    _onLoadCart() {
+        let totalProduct = localStorage.getItem('totalProd');
+        if (totalProduct) {
+            document.querySelector('#total-cart').textContent = totalProduct;
+        }
+        console.log('onLoad');
+    },
+
+    _displayCart() {
+        const listContainer = document.querySelector('#cartProduct');
+        let productInCart = localStorage.getItem('prodInCart');
+        productInCart = JSON.parse(productInCart);
+        console.log(productInCart);
+        if (productInCart) {
+            listContainer.innerHTML = '';
+            Object.values(productInCart).map(product => {
+                listContainer.innerHTML += renderListKeranjang(product);
+                document.querySelector('.totalPrice').textContent = 'Rp. ' + localStorage.getItem('totalPrice');
+                this._deleteProductInCart();
+                this._manageProduct();
+            })
+        } 
+        console.log('display');
     },
 }
 

@@ -8,7 +8,9 @@ import 'bootstrap';
 import './component/jumbotron-bar';
 import App from './views/app';
 import './views/pages/aftercheckout-page';
-import './component/foot-bar'
+import './component/foot-bar';
+import Cart from './utils/cart';
+
 const app = new App({
   content: document.querySelector('main'),
 });
@@ -17,6 +19,9 @@ window.addEventListener('hashchange', () => {
   app.renderPage();
 });
 
-window.addEventListener('load', () => {
-  app.renderPage();
+document.addEventListener('DOMContentLoaded', () => {
+  Cart._onLoadCart();
+  Cart._displayCart();
 });
+
+

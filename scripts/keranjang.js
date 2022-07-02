@@ -1,6 +1,6 @@
 import Cart from "../src/scripts/utils/cart";
 
-const renderListKeranjang = (data) => {
+export const renderListKeranjang = (data) => {
   return `
   <div class="row cartProduct">
                     <!-- cart images div -->
@@ -27,7 +27,7 @@ const renderListKeranjang = (data) => {
                                     </li>
                                     <li class="page-item">
                                         <input type="text" name="" class="page-link numberProduct"
-                                            value="1" id="textbox">
+                                            value="${data.inCart}" id="textbox">
                                     </li>
                                     <li class="page-item">
                                         <button class="page-link increaseProduct">
@@ -40,10 +40,10 @@ const renderListKeranjang = (data) => {
                         <!-- //remover move and price -->
                         <div class="row">
                             <div class="col-8 d-flex justify-content-between remove_wish">
-                                <p class="removeProduct">
+                                <button class="removeProduct">
                                     <i class="fas fa-trash-alt"></i> 
                                     REMOVE ITEM
-                                </p>
+                                </button>
                             </div>
                             <div class="col-4 d-flex justify-content-end price_money">
                                 <h3>Rp <span id="itemval">${data.price} </span></h3>
@@ -53,20 +53,6 @@ const renderListKeranjang = (data) => {
                 </div>
   `;
 };
-
-window.addEventListener('DOMContentLoaded', () => {
-  fetch('/api/list')
-    .then((res) => res.json())
-    .then((result) => {
-      console.log(result);
-      
-    const listContainer = document.querySelector('#cartProduct')
-    listContainer.innerHTML = result.map(renderListKeranjang).join('');
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});
 
 window.addEventListener('load', () => {
     Cart.init({
