@@ -13,7 +13,6 @@
 
 .table th {
   background-color: #34b3f1;
-  color: #ffffff;
 }
 
 .table tbody tr:nth-child(even) {
@@ -126,6 +125,7 @@
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   padding: 2rem;
+  margin-top: 50px;
 }
 
 .container-payment .box {
@@ -185,4 +185,8 @@
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
+}
+
+.content-title {
+  margin: 30px;
 }

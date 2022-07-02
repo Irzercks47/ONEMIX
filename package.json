@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "source": "templates/aftercheckout.html",
+  "source": "templates/keranjang.html",
   "scripts": {
 
     "start": "parcel templates/*.html --open",

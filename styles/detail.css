@@ -15,7 +15,7 @@ body {
     border-radius: 1%;
     padding: 10px;
     box-shadow: 4px 7px black;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .image > img {
@@ -35,7 +35,7 @@ body {
 .item-desc .desc-container
 {
     min-height: 40px;
-    background-color: #D9D9D9;
+    background-color: #D9D9D9 !important;
     padding: 20px 10px 10px 10px;
 }
 

@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ONEMIX</title>
     <link rel="icon" type="image/x-icon" href="../src/public/MIX(2).png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/styles/keranjang.css" />
   </head>
   <body>
@@ -22,56 +33,117 @@
           </div>
           <div class="row mt-4">
             <div class="col-9">
-              <div class="card p-1">
-                <div class="card-body">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th width="20%" scope="col">Gambar</th>
-                        <th width="50%" scope="col">Peralatan</th>
-                        <th width="20%" scope="col">Harga</th>
-                        <th><button type="submit" class="btn btn-sm float-end"><i class="fa fa-sync-alt" style="color: gray;"></i></a></th>
-                      </tr>
-                    </thead>
-                    <tbody id="listkeranjang">
-                        
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+              <div class="card p-4" id="cartProduct">
             </div>
             
-            <div class="col-3">
-              <div class="card p-1">
-                <div class="card-body">
-                  <h5 class="card-title mb-4">Ringkasan Harga Barang</h5>
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <td width="54%">Jumlah Barang</td>
-                        <td>XXXXX</td>
-                      </tr>
-                      <tr>
-                        <td width="54%">Ongkir</td>
-                        <td>XXXXX</td>
-                      </tr>
-                      <tr>
-                        <td width="54%">Total</td>
-                        <td>RpXXXXX</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <a href="/templates/checkout.html" class="btn btn-primary my-2 w-100 btn-custom btn-theme">Checkout</a>
+                </div>
+                <div class="col-3">
+                  <div class="card p-1">
+                    <div class="card-body">
+                      <h5 class="card-title mb-4">Ringkasan Harga Barang</h5>
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td width="54%">Jumlah Barang</td>
+                            <td>XXXXX</td>
+                          </tr>
+                          <tr>
+                            <td width="54%">Ongkir</td>
+                            <td>XXXXX</td>
+                          </tr>
+                          <tr>
+                            <td width="54%">Total</td>
+                            <td>RpXXXXX</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button type="button" class="btn btn-primary my-2 w-100 btn-custom btn-theme" data-bs-toggle="modal" data-bs-target="#inputData" data-bs-whatever="@mdo">Checkout</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Modal -->
+<div class="modal fade" id="inputData" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Isi Data Pengiriman Belanja</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="form-name" action="home.html" method="post" name="form" onsubmit="return validated()">
+        
+          <div class="font">Email</div>
+          <input autocomplete="off" type="text" name="email">
+          <div id="email_error">Please fill up your Email</div>
+
+          <div class="font font2">Nama Lengkap</div>
+          <input type="text" name="fullname">
+          <div id="fullname_error">Please fill Nama Lengkap or more than 3 Characters</div>
+
+          <div class="font font2">Nomor Handphone</div>
+          <input type="number" name="nohp">
+          <div id="nohp_error">Please fill up your Nomor Handphone</div>
+          
+          <div class="font font2">Alamat</div>
+          <input type="text" name="alamat">
+          <div id="alamat_error">Please fill up your Alamat</div>
+          
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button class="submit" type="button"> <a href="/templates/aftercheckout.html">Go To Checkout</a> </button>
+      </div>
+    </div>
+  </div>
+</div>
       </section>
     </main>
     <foot-bar></foot-bar>
-    <script type="module" src="/scripts/index.js"></script>
-    <script src="/scripts/keranjang.js"></script>
+    <script>
+      const product_total_amt = document.getElementById('product_total_amt');
+const shipping_charge = document.getElementById('shipping_charge');
+const total_cart_amt = document.getElementById('total_cart_amt');
+const decreaseNumber = (incdec, itemprice) => {
+    const itemval = document.getElementById(incdec);
+    const itempric = document.getElementById(itemprice);
+    console.log(itemprice.innerHTML);
+    // console.log(itemval.value);
+    if (itemval.value <= 1) {
+        itemval.value = 1;
+        alert('Negative quantity not allowed');
+    } else {
+        itemval.value = parseInt(itemval.value) - 1;
+        itemval.style.background = '#fff';
+        itemval.style.color = '#000';
+        itempric.innerHTML = parseInt(itempric.innerHTML) - (parseInt(itempric.innerHTML)/2) ;
+        // product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 650;
+        // total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+    }
+}
+const increaseNumber = (incdec, itemprice) => {
+    const itemval = document.getElementById(incdec);
+    const itempric = document.getElementById(itemprice);
+    // console.log(itemval.value);
+    if (itemval.value >= 5) {
+        itemval.value = 5;
+        alert('max 5 allowed');
+        itemval.style.background = 'red';
+        itemval.style.color = '#fff';
+    } else {
+        itemval.value = parseInt(itemval.value) + 1;
+        itempric.innerHTML = parseInt(itempric.innerHTML) * itemval.value;
+        product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 650;
+        total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+    }
+}
+    </script>
+    <script type="module" src="../src/scripts/index.js"></script>
+    <script type="module" src="/scripts/keranjang.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>

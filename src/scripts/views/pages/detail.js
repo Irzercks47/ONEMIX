@@ -1,5 +1,6 @@
 import UrlParser from '../../routes/url-parser';
 import main from '../../../../api/detail';
+import Cart from '../../utils/cart';
 import { async } from 'regenerator-runtime';
 
 const DetailPage = {
@@ -32,7 +33,7 @@ const DetailPage = {
                             <p>${data.deskripsi}</p>
                         </div>
                         </div>
-                        <button type="button" class="btn btn-outline-dark">add to cart</button>
+                        <button type="button" class="btn btn-outline-dark js-add-cart">add to cart</button>
                     </div>
                 </div>
                 `;
@@ -41,7 +42,7 @@ const DetailPage = {
         const url = UrlParser.parseActiveUrlWithoutCombiner();
         const detail = main(url.id);
         console.log(detail);
-        detail
+        const addvar = detail
         .then((res) => {
             console.log(res)
             return res;
@@ -50,10 +51,36 @@ const DetailPage = {
         .then((datas) => {
             const detailContainer = document.getElementById('detail-card');
             datas.forEach(data => {
-            detailContainer.innerHTML = renderdetailProductTemplate(data);
+                detailContainer.innerHTML = renderdetailProductTemplate(data);
+                Cart.init({
+                    addCartButton : document.querySelector('.js-add-cart'),
+                    cartProduct: {
+                        id: data.id,
+                        name: data.name,
+                        pictureId: data.pictureId,
+                        price: data.price,
+                        inCart: 0,
+                    },
+                });
+                console.log(document.querySelector('.js-add-cart'));
             })
             console.log(datas);
         });
+        console.log(addvar);
+        const total_cart = document.getElementById("total-cart")
+  
+  function changeCart(tipe) {
+    const current_total = parseInt(total_cart.textContent)
+    if ( tipe == 0 ) {
+      if ( current_total > 0 ) {
+        total_cart.innerHTML = current_total-1
+      }
+    } else {
+      total_cart.innerHTML = current_total+1
+    }
+  }
+        // const aadCart = document.getElementsByClassName('js-add-cart');
+
     },
 };
 
