@@ -62,4 +62,7 @@ window.addEventListener('load', () => {
     console.log(document.querySelectorAll('.numberProduct'))
     console.log(document.querySelectorAll('.increaseProduct'));
     console.log(document.querySelectorAll('.decreaseProduct'));
+    const prodCart = localStorage.getItem('prodInCart');
+    prodCart = JSON.parse(prodCart);
+    console.log(typeof(prodCart));
 })

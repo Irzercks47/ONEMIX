@@ -1,13 +1,10 @@
 import {renderListKeranjang} from '../../../scripts/keranjang'
-
+import {createAfterCheckoutTemplate} from '../../../scripts/aftercheckout'
 const Cart = {
-    async init ({cartProduct, addCartButton, cartContainer, deleteProduct, increaseProduct, decreaseProduct}) {
+    async init ({cartProduct, addCartButton, cartContainer, }) {
         this._cartProduct = cartProduct;
         this._addCartButton = addCartButton;
         this._cartContainer = cartContainer;
-        this._deleteProduct = deleteProduct;
-        this._increaseProduct = increaseProduct;
-        this._decreaseProduct = decreaseProduct;
 
 
         this._addData();
@@ -89,6 +86,7 @@ const Cart = {
         let currProduct = '';
         let productInCart = localStorage.getItem('prodInCart');
         productInCart = JSON.parse(productInCart);
+        console.log(productInCart);
         for(let i = 0; i < increaseProduct.length; i++) {
             increaseProduct[i].addEventListener('click', ()=> {
                 currQty = increaseProduct[i].parentElement.previousElementSibling.querySelector('.numberProduct').textContent;
@@ -113,7 +111,7 @@ const Cart = {
                     productInCart[currProduct].inCart -=1;
                     this._totalProducts(productInCart[currProduct], "decrease");
                     this._totalCost(productInCart[currProduct], "decrease");
-                    localStorage.setItem('productInCart', JSON.stringify(productInCart));
+                    localStorage.setItem('prodInCart', JSON.stringify(productInCart));
                     this._displayCart();
                 }
             });
@@ -168,8 +166,31 @@ const Cart = {
                 this._manageProduct();
             })
         } 
-        console.log('display');
     },
+
+    _displayTable() {
+        const tableContainer = document.querySelector('.tableProduct');
+        console.log('display table');
+        let productInTable = localStorage.getItem('prodInCart');
+        productInTable = JSON.parse(productInTable);
+        console.log(productInTable);
+        if (productInTable) {
+            tableContainer.innerHTML = '';
+            Object.values(productInTable).map(product => {
+                tableContainer.innerHTML += createAfterCheckoutTemplate(product);
+                let totalPrice = localStorage.getItem('totalPrice');
+                totalPrice = parseInt(totalPrice) + 10000;
+                document.querySelector('.totalProd').textContent = 'Rp. ' + totalPrice;
+            })
+        }
+    },
+
+    _clearProduct() {
+        let clearProduct = document.querySelector('.clearProduct');
+        clearProduct.addEventListener('click', () => {
+            localStorage.clear();
+        })
+    }
 }
 
 export default Cart;

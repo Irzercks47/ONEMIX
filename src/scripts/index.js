@@ -10,6 +10,7 @@ import App from './views/app';
 import './views/pages/aftercheckout-page';
 import './component/foot-bar';
 import Cart from './utils/cart';
+import '../../scripts/transaksi';
 
 const app = new App({
   content: document.querySelector('main'),

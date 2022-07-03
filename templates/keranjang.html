@@ -44,12 +44,8 @@
                       <table class="table">
                         <tbody>
                           <tr>
-                            <td width="54%">Jumlah Barang</td>
-                            <td>XXXXX</td>
-                          </tr>
-                          <tr>
                             <td width="54%">Ongkir</td>
-                            <td>XXXXX</td>
+                            <td>Rp. 10000</td>
                           </tr>
                           <tr>
                             <td width="54%">Total</td>
@@ -78,25 +74,25 @@
         <form class="form-name" action="home.html" method="post" name="form" onsubmit="return validated()">
         
           <div class="font">Email</div>
-          <input autocomplete="off" type="text" name="email">
+          <input autocomplete="off" type="text" id="email" name="email">
           <div id="email_error">Please fill up your Email</div>
 
           <div class="font font2">Nama Lengkap</div>
-          <input type="text" name="fullname">
+          <input type="text" id="name" name="fullname">
           <div id="fullname_error">Please fill Nama Lengkap or more than 3 Characters</div>
 
-          <div class="font font2">Nomor Handphone</div>
-          <input type="number" name="nohp">
+          <div class="font font2">Nomor WA</div>
+          <input type="number" id="noWA" name="nohp">
           <div id="nohp_error">Please fill up your Nomor Handphone</div>
           
           <div class="font font2">Alamat</div>
-          <input type="text" name="alamat">
+          <input type="text" id="alamat" name="alamat">
           <div id="alamat_error">Please fill up your Alamat</div>
           
       </form>
       </div>
       <div class="modal-footer">
-        <button class="submit" type="button"> <a href="/templates/aftercheckout.html">Go To Checkout</a> </button>
+        <button class="submit" type="button"> <a href="/templates/aftercheckout.html" id="formButton">Go to Checkout</a></button>
       </div>
     </div>
   </div>
@@ -104,46 +100,9 @@
       </section>
     </main>
     <foot-bar></foot-bar>
-    <script>
-      const product_total_amt = document.getElementById('product_total_amt');
-const shipping_charge = document.getElementById('shipping_charge');
-const total_cart_amt = document.getElementById('total_cart_amt');
-const decreaseNumber = (incdec, itemprice) => {
-    const itemval = document.getElementById(incdec);
-    const itempric = document.getElementById(itemprice);
-    console.log(itemprice.innerHTML);
-    // console.log(itemval.value);
-    if (itemval.value <= 1) {
-        itemval.value = 1;
-        alert('Negative quantity not allowed');
-    } else {
-        itemval.value = parseInt(itemval.value) - 1;
-        itemval.style.background = '#fff';
-        itemval.style.color = '#000';
-        itempric.innerHTML = parseInt(itempric.innerHTML) - (parseInt(itempric.innerHTML)/2) ;
-        // product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 650;
-        // total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
-    }
-}
-const increaseNumber = (incdec, itemprice) => {
-    const itemval = document.getElementById(incdec);
-    const itempric = document.getElementById(itemprice);
-    // console.log(itemval.value);
-    if (itemval.value >= 5) {
-        itemval.value = 5;
-        alert('max 5 allowed');
-        itemval.style.background = 'red';
-        itemval.style.color = '#fff';
-    } else {
-        itemval.value = parseInt(itemval.value) + 1;
-        itempric.innerHTML = parseInt(itempric.innerHTML) * itemval.value;
-        product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 650;
-        total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
-    }
-}
-    </script>
     <script type="module" src="../src/scripts/index.js"></script>
     <script type="module" src="/scripts/keranjang.js"></script>
+    <script type="module" src="/scripts/transaksi.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
