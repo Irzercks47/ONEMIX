@@ -21,17 +21,18 @@ const renderListKeranjang = (data) => {
                             <div class="col-6">
                                 <ul class="pagination justify-content-end set_quantity">
                                     <li class="page-item">
-                                        <button class="page-link decreaseProduct"
-                                            onclick="decreaseNumber('textbox','itemval')">
-                                            <i class="fas fa-minus"></i> </button>
+                                        <button class="page-link decreaseProduct">
+                                            <i class="fas fa-minus"></i> 
+                                        </button>
                                     </li>
-                                    <li class="page-item"><input type="text" name="" class="page-link numberProduct"
+                                    <li class="page-item">
+                                        <input type="text" name="" class="page-link numberProduct"
                                             value="1" id="textbox">
                                     </li>
                                     <li class="page-item">
-                                        <button class="page-link increaseProduct"
-                                            onclick="increaseNumber('textbox','itemval')"> <i
-                                                class="fas fa-plus"></i></button>
+                                        <button class="page-link increaseProduct">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
@@ -39,7 +40,10 @@ const renderListKeranjang = (data) => {
                         <!-- //remover move and price -->
                         <div class="row">
                             <div class="col-8 d-flex justify-content-between remove_wish">
-                                <p class="removeProduct"><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                                <p class="removeProduct">
+                                    <i class="fas fa-trash-alt"></i> 
+                                    REMOVE ITEM
+                                </p>
                             </div>
                             <div class="col-4 d-flex justify-content-end price_money">
                                 <h3>Rp <span id="itemval">${data.price} </span></h3>
