@@ -80,8 +80,6 @@ const DetailPage = {
       total_cart.innerHTML = current_total+1
     }
   }
-        // const aadCart = document.getElementsByClassName('js-add-cart');
-
     },
 };
 

@@ -24,6 +24,13 @@
     margin-bottom: 10px;
   }
 
+  .removeProduct {
+    background-color: firebrick;
+    border-radius: 5px;
+    padding: 5px;
+    color: antiquewhite;
+  }
+
   .card {
     border: none;
   }
