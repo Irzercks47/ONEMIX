@@ -8,7 +8,7 @@ class footBar extends HTMLElement {
         
             <footer class="footer-dark">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row al-center">
                         <div class="col-sm-4 col-md-4 item">
                             <h3>About</h3>
                             <ul>

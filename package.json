@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "source": "templates/keranjang.html",
+  "source": "templates/index.html",
   "scripts": {
 
     "start": "parcel templates/*.html --open",
@@ -30,7 +30,6 @@
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
-    "@hapi/hapi": "^20.2.2",
     "@popperjs/core": "^2.11.5",
     "@supabase/supabase-js": "^1.35.3",
     "bootstrap": "^5.1.3",
