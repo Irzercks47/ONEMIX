@@ -57,12 +57,8 @@ export const renderListKeranjang = (data) => {
 window.addEventListener('load', () => {
     Cart.init({
         cartContainer: document.querySelector('#cartProduct'),
-        deleteProduct: document.querySelectorAll('.removeProduct'),
-        increaseProduct: document.querySelectorAll('.increaseProduct'),
-        decreaseProduct: document.querySelectorAll('.decreaseProduct'),
     })
     console.log(document.querySelector('#cartProduct'));
-    console.log(document.querySelectorAll('.increaseProduct'));
     console.log(document.querySelectorAll('.numberProduct'))
     console.log(document.querySelectorAll('.increaseProduct'));
     console.log(document.querySelectorAll('.decreaseProduct'));

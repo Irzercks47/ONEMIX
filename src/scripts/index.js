@@ -19,7 +19,7 @@ window.addEventListener('hashchange', () => {
   app.renderPage();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   Cart._onLoadCart();
   Cart._displayCart();
 });

@@ -16,16 +16,17 @@ const Cart = {
     _addData() {
         this._addCartButton.addEventListener('click', () => {
             console.log(this._cartProduct);
+            console.log(this._addCartButton);
 
-            this._totalProducts();
-            this._totalCost();
+            this._totalProducts(this._cartProduct);
+            this._totalCost(this._cartProduct);
         });
     },
 
-    _totalProducts(action) {
+    _totalProducts(product, action) {
         let totalProduct = localStorage.getItem('totalProd');
-        console.log('total Product')
-        totalProduct = parseInt();
+        console.log('total Product');
+        totalProduct = parseInt(totalProduct);
         let productInCart = localStorage.getItem('prodInCart');
         productInCart = JSON.parse(productInCart);
         if (action) {
@@ -40,57 +41,59 @@ const Cart = {
             document.querySelector('#total-cart').textContent = 1;
         }
 
-        this._setProduct();
-        console.log('totalProduct');
+        this._setProduct(product);
     },
 
-    _setProduct() {
+    _setProduct(product) {
+        console.log('set product');
         let productInCart = localStorage.getItem('prodInCart');
         productInCart = JSON.parse(productInCart);
-        console.log(productInCart);
         if (productInCart != null) {
-            if (productInCart[this._cartProduct.name] == undefined) {
+            if (productInCart[product.name] == undefined) {
                 productInCart = {
                     ...productInCart, 
-                    [this._cartProduct.name]: this._cartProduct
+                    [product.name]: product
                 }
             }
-            productInCart[this._cartProduct.name].inCart+=1
+            productInCart[product.name].inCart+=1
         } else {
-            this._cartProduct.inCart = 1
+            product.inCart = 1
             productInCart = {
-                [this._cartProduct.name]: this._cartProduct,
+                [product.name]: product,
             }
         } 
         localStorage.setItem('prodInCart', JSON.stringify(productInCart));
-        console.log('setProduct');
     },
 
-    _totalCost (action) {
-        console.log('total cost');
+    _totalCost (product, action) {
         let totalPrice = localStorage.getItem('totalPrice');
         if (action) {
             price = parseInt(totalPrice);
-            localStorage.setItem('totalPrice', price-this._cartProduct.price);
+            localStorage.setItem('totalPrice', price-product.price);
         } else if (totalPrice != null) {
             price = parseInt(totalPrice);
-            localStorage.setItem('totalPrice', price+this._cartProduct.price);
+            localStorage.setItem('totalPrice', price+product.price);
         } else {
-            localStorage.setItem('totalPrice', this._cartProduct.price);
+            localStorage.setItem('totalPrice', product.price);
         }
         console.log('totalCost');
     },
 
     _manageProduct () {
+        console.log('manage product');
         let currQty = 0;
+        let increaseProduct = document.querySelectorAll('.increaseProduct');
+        let decreaseProduct = document.querySelectorAll('.decreaseProduct');
+        console.log(increaseProduct);
+        console.log(decreaseProduct);
         let currProduct = '';
         let productInCart = localStorage.getItem('prodInCart');
         productInCart = JSON.parse(productInCart);
-        for(let i = 0; i < this._increaseProduct.length; i++) {
-            this._increaseProduct[i].addEventListener('click', ()=> {
-                currQty = this._increaseProduct[i].parentElement.previousElementSibling.querySelector('.numberProduct').textContent;
+        for(let i = 0; i < increaseProduct.length; i++) {
+            increaseProduct[i].addEventListener('click', ()=> {
+                currQty = increaseProduct[i].parentElement.previousElementSibling.querySelector('.numberProduct').textContent;
                 console.log(currQty);
-                currProduct = this._increaseProduct[i].parentElement.parentElement.parentElement.previousElementSibling.querySelector('.product_name').textContent;
+                currProduct = increaseProduct[i].parentElement.parentElement.parentElement.previousElementSibling.querySelector('.product_name').textContent;
                 console.log(currProduct);
     
                 productInCart[currProduct].inCart += 1;
@@ -100,10 +103,10 @@ const Cart = {
                 this._displayCart();
             });
 
-            this._decreaseProduct[i].addEventListener('click', () => {
-                currQty = this._decreaseProduct[i].parentElement.parentElement.querySelector('.numberProduct').textContent;
+            decreaseProduct[i].addEventListener('click', () => {
+                currQty = decreaseProduct[i].parentElement.parentElement.querySelector('.numberProduct').textContent;
                 console.log(currQty);
-                currProduct = this._increaseProduct[i].parentElement.parentElement.parentElement.previousElementSibling.querySelector('.product_name').textContent;
+                currProduct = increaseProduct[i].parentElement.parentElement.parentElement.previousElementSibling.querySelector('.product_name').textContent;
                 console.log(currProduct);
                 
                 if(productInCart[currProduct].inCart > 1) {
@@ -115,19 +118,19 @@ const Cart = {
                 }
             });
         }
-        console.log('manage');
     },
 
     _deleteProductInCart() {
         let totalPrice = localStorage.getItem('totalPrice');
+        let deleteProduct = document.querySelectorAll('.removeProduct')
         let productInCart = localStorage.getItem('prodInCart');
         let totalProduct = localStorage.getItem('totalProd');
         productInCart = JSON.parse(productInCart);
         let productName;
 
-        for(let i = 0; i < this._deleteProduct.length; i++) {
-            this._deleteProduct[i].addEventListener('click', () => {
-                productName = this._deleteProduct[i].parentElement.parentElement.parentElement.querySelector('.product_name').textContent;
+        for(let i = 0; i < deleteProduct.length; i++) {
+            deleteProduct[i].addEventListener('click', () => {
+                productName = deleteProduct[i].parentElement.parentElement.parentElement.querySelector('.product_name').textContent;
                 console.log(productName);
                 localStorage.setItem('totalProd',totalProduct - productInCart[productName].inCart);
                 localStorage.setItem('totalPrice',totalPrice - (productInCart[productName].price * productInCart[productName].inCart));
@@ -151,6 +154,7 @@ const Cart = {
     },
 
     _displayCart() {
+        console.log('display cart');
         const listContainer = document.querySelector('#cartProduct');
         let productInCart = localStorage.getItem('prodInCart');
         productInCart = JSON.parse(productInCart);
